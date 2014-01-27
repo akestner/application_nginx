@@ -6,5 +6,7 @@ description      "Deploys and configures Nginx as an application server"
 long_description  IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version          "2.0.3"
 
-depends "application", "~> 3.0"
-depends "nginx"
+%w{ application nginx }.each do |cb|
+  depends cb
+end
+
